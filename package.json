@@ -1,6 +1,6 @@
 {
   "name": "zod-temporal",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Temporal integration for Zod validation library",
   "author": "Ben Scholzen 'DASPRiD'",
   "keywords": [
