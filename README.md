@@ -35,12 +35,12 @@ import {zt} from 'zod-temporal/mini';
 
 This library supplies the following types:
 
-- `zj.duration()`
-- `zj.plainDate()`
-- `zj.plainDateTime()`
-- `zj.plainTime()`
-- `zj.offsetDateTime()`
-- `zj.zonedDateTime()`
+- `zt.duration()`
+- `zt.plainDate()`
+- `zt.plainDateTime()`
+- `zt.plainTime()`
+- `zt.offsetDateTime()`
+- `zt.zonedDateTime()`
  
-In contrast to zod-joda, `zj.zonedDateTime()` represents date times with timezone information, while
-`zj.offsetDateTime()` also parses to a `Temporal.ZonedDateTime` but cast to UTC.
+In contrast to zod-joda, `zt.zonedDateTime()` represents date times with timezone information, while
+`zt.offsetDateTime()` also parses to a `Temporal.ZonedDateTime` but cast to UTC.
