@@ -5,7 +5,9 @@ import {
     offsetDateTimeConfig,
     plainDateConfig,
     plainDateTimeConfig,
+    plainMonthDayConfig,
     plainTimeConfig,
+    plainYearMonthConfig,
     type TransformConfig,
     zonedDateTimeConfig,
 } from "./core.js";
@@ -41,6 +43,8 @@ export const plainDateTime = createParseConstructor(plainDateTimeConfig);
 export const plainTime = createParseConstructor(plainTimeConfig);
 export const offsetDateTime = createParseConstructor(offsetDateTimeConfig);
 export const zonedDateTime = createParseConstructor(zonedDateTimeConfig);
+export const plainYearMonth = createParseConstructor(plainYearMonthConfig);
+export const plainMonthDay = createParseConstructor(plainMonthDayConfig);
 
 export const zt = {
     duration,
@@ -49,6 +53,8 @@ export const zt = {
     plainTime,
     offsetDateTime,
     zonedDateTime,
+    plainYearMonth,
+    plainMonthDay,
 };
 
 export default zt;

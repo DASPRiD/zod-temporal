@@ -50,3 +50,17 @@ export const zonedDateTimeConfig: TransformConfig<Temporal.ZonedDateTime> = {
     schemaFormat: "zoned-date-time",
     example: "2020-01-01T14:00:00+01:00[Europe/Berlin]",
 };
+
+export const plainYearMonthConfig: TransformConfig<Temporal.PlainYearMonth> = {
+    parse: (input) => Temporal.PlainYearMonth.from(input),
+    invalidMessage: "Invalid plain year month",
+    schemaFormat: "plain-year-month",
+    example: "2020-01",
+};
+
+export const plainMonthDayConfig: TransformConfig<Temporal.PlainMonthDay> = {
+    parse: (input) => Temporal.PlainMonthDay.from(input),
+    invalidMessage: "Invalid plain month day",
+    schemaFormat: "plain-month-day",
+    example: "12-30",
+};
