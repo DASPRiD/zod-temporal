@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/dasprid/zod-temporal/compare/v1.0.1...v1.1.0) (2025-06-24)
+
+
+### Features
+
+* add support for PlainYearMonth and PlainMonthDay ([5c36f9c](https://github.com/dasprid/zod-temporal/commit/5c36f9c081db94b5a83be09f0bf94ef0317264d8))
+
 ## [1.0.1](https://github.com/dasprid/zod-temporal/compare/v1.0.0...v1.0.1) (2025-06-23)
 
 
