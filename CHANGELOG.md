@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/dasprid/zod-temporal/compare/v1.1.0...v1.2.0) (2025-07-30)
+
+
+### Features
+
+* add support for zod v4 stable ([c8a5841](https://github.com/dasprid/zod-temporal/commit/c8a584153bda18fdb7e61d8b6145e2dd1d1659e9))
+
 # [1.1.0](https://github.com/dasprid/zod-temporal/compare/v1.0.1...v1.1.0) (2025-06-24)
 
 
