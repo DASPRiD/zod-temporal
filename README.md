@@ -20,17 +20,17 @@ yarn add zod-temporal
   
 ## Quick Start
 
-Import the schema types from this package. You can either import individual types or import all types via convenience
+Import the schema types from this package. You can either import individual types or import all types via a convenience
 method:
 
-```typescript
-import {zt} from 'zod-temporal';
+```ts
+import { zt } from 'zod-temporal';
 ```
 
 For `zod/v4/mini`, import from the mini sub-path:
 
-```typescript
-import {zt} from 'zod-temporal/mini';
+```ts
+import { zt } from 'zod-temporal/mini';
 ```
 
 This library supplies the following types:
@@ -44,3 +44,13 @@ This library supplies the following types:
  
 In contrast to zod-joda, `zt.zonedDateTime()` represents date times with timezone information, while
 `zt.offsetDateTime()` also parses to a `Temporal.ZonedDateTime` but cast to UTC.
+
+## Encoding
+
+The temporal schemas are implemented as [codecs](https://zod.dev/codecs). This allows you to not only parse temporal
+values from their ISO string representation but also to encode them back:
+
+```ts
+const schema = zt.plainTime();
+const value = schema.encode(Temporal.PlainTime.from('12:34:56.789'));
+```

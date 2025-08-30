@@ -2,14 +2,7 @@
     "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
     "assist": { "actions": { "source": { "organizeImports": "on" } } },
     "files": {
-        "includes": [
-            "**/biome.json",
-            "**/commitlint.config.cjs",
-            "**/vite.config.ts",
-            "**/src/**/*",
-            "**/demo/**/*",
-            "**/test/**/*"
-        ]
+        "includes": ["biome.json", "commitlint.config.cjs", "src/**/*", "test/**/*"]
     },
     "linter": {
         "enabled": true,
@@ -47,10 +40,7 @@
             "suspicious": {
                 "noApproximativeNumericConstant": "warn",
                 "noEmptyBlockStatements": "error",
-                "noConsole": {
-                    "level": "error",
-                    "options": { "allow": ["assert", "error", "info", "warn", "debug"] }
-                }
+                "noConsole": "error"
             }
         }
     },

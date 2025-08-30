@@ -3,10 +3,6 @@ import { it } from "node:test";
 import { toJSONSchema } from "zod/v4/core";
 import { describeMatrix } from "./matrix.js";
 
-if (typeof Temporal === "undefined") {
-    await import("temporal-polyfill/global");
-}
-
 describeMatrix("Duration", (zt, z) => {
     it("should parse ISO duration value", () => {
         const schema = zt.duration();
@@ -39,6 +35,12 @@ describeMatrix("Duration", (zt, z) => {
             format: "duration",
             example: "PT1H",
         });
+    });
+
+    it("should encode to ISO duration", () => {
+        const schema = zt.duration();
+        const result = z.encode(schema, Temporal.Duration.from("PT1H"));
+        assert.equal(result, "PT1H");
     });
 
     it("should preserve JSON schema over refine", () => {

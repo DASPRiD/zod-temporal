@@ -1,4 +1,4 @@
-import { string, type ZodType } from "zod/v4";
+import { z } from "zod/v4";
 import {
     type CoreParams,
     durationConfig,
@@ -12,39 +12,55 @@ import {
     zonedDateTimeConfig,
 } from "./core.js";
 
-const createParseConstructor =
-    <T>({ parse, invalidMessage, schemaFormat, example }: TransformConfig<T>) =>
-    (params?: CoreParams): ZodType<T, unknown> => {
-        const inputSchema = string();
+const createCodecConstructor =
+    <T>({
+        parse,
+        encode,
+        instanceType,
+        invalidMessage,
+        schemaFormat,
+        example,
+    }: TransformConfig<T>) =>
+    (params?: CoreParams): z.ZodCodec<z.ZodType<string>, z.ZodType<T>> => {
+        const inputSchema = z.string();
         inputSchema._zod.toJSONSchema = () => ({
             type: "string",
             format: schemaFormat,
             example: example,
         });
 
-        return inputSchema.transform((value, context) => {
-            try {
-                return parse(value);
-            } catch {
-                context.issues.push({
-                    code: "custom",
-                    message: params?.error ?? invalidMessage,
-                    input: context.value,
-                });
+        return z.codec(
+            inputSchema,
+            z.custom<T>((value) => value instanceof instanceType, {
+                error: `Not an instance of ${instanceType.name}`,
+            }),
+            {
+                decode: (value, context) => {
+                    try {
+                        return parse(value);
+                    } catch {
+                        context.issues.push({
+                            code: "custom",
+                            message: params?.error ?? invalidMessage,
+                            input: context.value,
+                        });
 
-                return undefined as never;
-            }
-        });
+                        return undefined as never;
+                    }
+                },
+                encode,
+            },
+        );
     };
 
-export const duration = createParseConstructor(durationConfig);
-export const plainDate = createParseConstructor(plainDateConfig);
-export const plainDateTime = createParseConstructor(plainDateTimeConfig);
-export const plainTime = createParseConstructor(plainTimeConfig);
-export const offsetDateTime = createParseConstructor(offsetDateTimeConfig);
-export const zonedDateTime = createParseConstructor(zonedDateTimeConfig);
-export const plainYearMonth = createParseConstructor(plainYearMonthConfig);
-export const plainMonthDay = createParseConstructor(plainMonthDayConfig);
+export const duration = createCodecConstructor(durationConfig);
+export const plainDate = createCodecConstructor(plainDateConfig);
+export const plainDateTime = createCodecConstructor(plainDateTimeConfig);
+export const plainTime = createCodecConstructor(plainTimeConfig);
+export const offsetDateTime = createCodecConstructor(offsetDateTimeConfig);
+export const zonedDateTime = createCodecConstructor(zonedDateTimeConfig);
+export const plainYearMonth = createCodecConstructor(plainYearMonthConfig);
+export const plainMonthDay = createCodecConstructor(plainMonthDayConfig);
 
 export const zt = {
     duration,

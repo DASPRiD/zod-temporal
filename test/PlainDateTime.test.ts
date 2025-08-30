@@ -3,10 +3,6 @@ import { it } from "node:test";
 import { toJSONSchema } from "zod/v4/core";
 import { describeMatrix } from "./matrix.js";
 
-if (typeof Temporal === "undefined") {
-    await import("temporal-polyfill/global");
-}
-
 describeMatrix("PlainDateTime", (zt, z) => {
     it("should allow ISO date time value", () => {
         const schema = zt.plainDateTime();
@@ -47,6 +43,22 @@ describeMatrix("PlainDateTime", (zt, z) => {
             format: "plain-date-time",
             example: "2020-01-01T14:00:00",
         });
+    });
+
+    it("should encode to ISO date time", () => {
+        const schema = zt.plainDateTime();
+        const result = z.encode(
+            schema,
+            Temporal.PlainDateTime.from({
+                year: 2021,
+                month: 1,
+                day: 1,
+                hour: 20,
+                minute: 0,
+                second: 0,
+            }),
+        );
+        assert.equal(result, "2021-01-01T20:00:00");
     });
 
     it("should preserve JSON schema over refine", () => {

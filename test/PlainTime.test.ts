@@ -3,10 +3,6 @@ import { it } from "node:test";
 import { toJSONSchema } from "zod/v4/core";
 import { describeMatrix } from "./matrix.js";
 
-if (typeof Temporal === "undefined") {
-    await import("temporal-polyfill/global");
-}
-
 describeMatrix("PlainTime", (zt, z) => {
     it("should allow ISO time value", () => {
         const schema = zt.plainTime();
@@ -40,6 +36,15 @@ describeMatrix("PlainTime", (zt, z) => {
             format: "time",
             example: "14:00:00",
         });
+    });
+
+    it("should encode to ISO time", () => {
+        const schema = zt.plainTime();
+        const result = z.encode(
+            schema,
+            Temporal.PlainTime.from({ hour: 20, minute: 0, second: 0 }),
+        );
+        assert.equal(result, "20:00:00");
     });
 
     it("should preserve JSON schema over refine", () => {

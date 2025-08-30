@@ -33,6 +33,3 @@ jobs:
 
       - name: Type Check
         run: pnpm tsc --noEmit
-
-      - name: Validate commit messages
-        run: pnpm commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
