@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/dasprid/zod-temporal/compare/v1.2.0...v2.0.0) (2025-08-30)
+
+
+### Features
+
+* re-implement schemas as codecs ([4972e56](https://github.com/dasprid/zod-temporal/commit/4972e56df657da583f9ae5b5777cdc8e17558006))
+
+
+### BREAKING CHANGES
+
+* this requires zod 4.1.0 or higher.
+
 # [1.2.0](https://github.com/dasprid/zod-temporal/compare/v1.1.0...v1.2.0) (2025-07-30)
 
 
