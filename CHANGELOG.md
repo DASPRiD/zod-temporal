@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/DASPRiD/zod-temporal/compare/v2.0.0...v2.0.1) (2025-10-23)
+
+
+### Bug Fixes
+
+* add provenance attestation ([4135502](https://github.com/DASPRiD/zod-temporal/commit/4135502f19e8b546e45e97b09dda96e93b8419b3))
+
 # [2.0.0](https://github.com/dasprid/zod-temporal/compare/v1.2.0...v2.0.0) (2025-08-30)
 
 
