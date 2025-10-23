@@ -12,7 +12,7 @@
   "license": "BSD-2-Clause",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dasprid/zod-temporal.git"
+    "url": "git+https://github.com/DASPRiD/zod-temporal.git"
   },
   "type": "module",
   "sideEffects": false,
