@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/DASPRiD/zod-temporal/compare/v2.0.1...v2.1.0) (2026-02-25)
+
+
+### Features
+
+* add support for Temporal.Instant ([6681f10](https://github.com/DASPRiD/zod-temporal/commit/6681f10401f4ac01a001360c391bdd1a1ecb8594))
+
 ## [2.0.1](https://github.com/DASPRiD/zod-temporal/compare/v2.0.0...v2.0.1) (2025-10-23)
 
 
