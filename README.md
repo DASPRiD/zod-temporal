@@ -40,6 +40,7 @@ This library supplies the following types:
 - `zt.plainDateTime()`
 - `zt.plainTime()`
 - `zt.offsetDateTime()`
+- `zt.instant()`
 - `zt.zonedDateTime()`
  
 In contrast to zod-joda, `zt.zonedDateTime()` represents date times with timezone information, while
