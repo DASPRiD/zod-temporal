@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/DASPRiD/zod-temporal/compare/v2.1.0...v2.1.1) (2026-02-25)
+
+
+### Bug Fixes
+
+* add zt.instant to README ([f6e5542](https://github.com/DASPRiD/zod-temporal/commit/f6e5542463e9fa77df303c3288f7debe258c01ef))
+
 # [2.1.0](https://github.com/DASPRiD/zod-temporal/compare/v2.0.1...v2.1.0) (2026-02-25)
 
 
