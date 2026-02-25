@@ -2,6 +2,7 @@ import { z } from "zod/v4";
 import {
     type CoreParams,
     durationConfig,
+    instantConfig,
     offsetDateTimeConfig,
     plainDateConfig,
     plainDateTimeConfig,
@@ -58,6 +59,7 @@ export const plainDate = createCodecConstructor(plainDateConfig);
 export const plainDateTime = createCodecConstructor(plainDateTimeConfig);
 export const plainTime = createCodecConstructor(plainTimeConfig);
 export const offsetDateTime = createCodecConstructor(offsetDateTimeConfig);
+export const instant = createCodecConstructor(instantConfig);
 export const zonedDateTime = createCodecConstructor(zonedDateTimeConfig);
 export const plainYearMonth = createCodecConstructor(plainYearMonthConfig);
 export const plainMonthDay = createCodecConstructor(plainMonthDayConfig);
@@ -68,6 +70,7 @@ export const zt = {
     plainDateTime,
     plainTime,
     offsetDateTime,
+    instant,
     zonedDateTime,
     plainYearMonth,
     plainMonthDay,
