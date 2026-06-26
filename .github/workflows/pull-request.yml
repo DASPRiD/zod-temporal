@@ -16,10 +16,10 @@ jobs:
       - name: Use pnpm
         uses: pnpm/action-setup@v4
 
-      - name: Use Node.js 22.x
+      - name: Use Node.js 26.x
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 26
           cache: 'pnpm'
 
       - name: Install Dependencies
