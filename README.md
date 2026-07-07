@@ -39,6 +39,8 @@ This library supplies the following types:
 - `zt.plainDate()`
 - `zt.plainDateTime()`
 - `zt.plainTime()`
+- `zt.plainYearMonth()`
+- `zt.plainMonthDay()`
 - `zt.instant()`
 - `zt.zonedDateTime()`
 
