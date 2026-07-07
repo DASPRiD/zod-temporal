@@ -39,12 +39,11 @@ This library supplies the following types:
 - `zt.plainDate()`
 - `zt.plainDateTime()`
 - `zt.plainTime()`
-- `zt.offsetDateTime()`
 - `zt.instant()`
 - `zt.zonedDateTime()`
- 
-In contrast to zod-joda, `zt.zonedDateTime()` represents date times with timezone information, while
-`zt.offsetDateTime()` also parses to a `Temporal.ZonedDateTime` but cast to UTC.
+
+`zt.instant()` parses any offset date time (e.g. `2020-01-01T14:00:00+01:00`) to a `Temporal.Instant`, while
+`zt.zonedDateTime()` expects timezone information (e.g. `2020-01-01T14:00:00+01:00[Europe/Berlin]`) and preserves it.
 
 ## Encoding
 

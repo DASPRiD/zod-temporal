@@ -58,6 +58,11 @@ export const duration = createCodecConstructor(durationConfig);
 export const plainDate = createCodecConstructor(plainDateConfig);
 export const plainDateTime = createCodecConstructor(plainDateTimeConfig);
 export const plainTime = createCodecConstructor(plainTimeConfig);
+/**
+ * @deprecated Use {@link instant} instead; call `.toZonedDateTimeISO("UTC")` on decoded values if you need a
+ *             `Temporal.ZonedDateTime`, and `.toInstant()` on values before encoding. Will be removed in the next
+ *             major version.
+ */
 export const offsetDateTime = createCodecConstructor(offsetDateTimeConfig);
 export const instant = createCodecConstructor(instantConfig);
 export const zonedDateTime = createCodecConstructor(zonedDateTimeConfig);
@@ -69,6 +74,11 @@ export const zt = {
     plainDate,
     plainDateTime,
     plainTime,
+    /**
+     * @deprecated Use {@link instant} instead; call `.toZonedDateTimeISO("UTC")` on decoded values if you need a
+     *             `Temporal.ZonedDateTime`, and `.toInstant()` on values before encoding. Will be removed in the
+     *             next major version.
+     */
     offsetDateTime,
     instant,
     zonedDateTime,
