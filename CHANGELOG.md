@@ -1,3 +1,15 @@
+# [2.2.0](https://github.com/DASPRiD/zod-temporal/compare/v2.1.1...v2.2.0) (2026-07-07)
+
+
+### Bug Fixes
+
+* remove stale peerDependenciesMeta, making zod a required peer ([96b2031](https://github.com/DASPRiD/zod-temporal/commit/96b203190ad408981931333748ca5caca35cbf79))
+
+
+### Features
+
+* deprecate offsetDateTime in favor of instant ([537357a](https://github.com/DASPRiD/zod-temporal/commit/537357a2093430ba073285eb492492146ac741a0))
+
 ## [2.1.1](https://github.com/DASPRiD/zod-temporal/compare/v2.1.0...v2.1.1) (2026-02-25)
 
 
