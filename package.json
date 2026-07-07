@@ -43,14 +43,6 @@
   "peerDependencies": {
     "zod": "^4.1.0"
   },
-  "peerDependenciesMeta": {
-    "@zod/mini": {
-      "optional": true
-    },
-    "zod": {
-      "optional": true
-    }
-  },
   "devDependencies": {
     "@biomejs/biome": "^2.5.1",
     "@commitlint/cli": "^21.1.0",
