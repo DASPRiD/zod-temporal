@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/DASPRiD/zod-temporal/compare/v2.2.0...v2.2.1) (2026-09-28)
+
+
+### Bug Fixes
+
+* emit examples instead of example in JSON Schema ([d88af5f](https://github.com/DASPRiD/zod-temporal/commit/d88af5f38146ec19c3941fd4cf23c88db792bc1d))
+
 # [2.2.0](https://github.com/DASPRiD/zod-temporal/compare/v2.1.1...v2.2.0) (2026-07-07)
 
 
