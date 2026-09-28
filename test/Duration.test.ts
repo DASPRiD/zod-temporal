@@ -30,10 +30,11 @@ describeMatrix("Duration", (zt, z) => {
     it("should create a standard JSON schema", () => {
         const schema = zt.duration();
         const jsonSchema = toJSONSchema(schema, { io: "input" });
-        assert.partialDeepStrictEqual(jsonSchema, {
+        assert.deepStrictEqual(jsonSchema, {
+            $schema: "https://json-schema.org/draft/2020-12/schema",
             type: "string",
             format: "duration",
-            example: "PT1H",
+            examples: ["PT1H"],
         });
     });
 
@@ -46,10 +47,11 @@ describeMatrix("Duration", (zt, z) => {
     it("should preserve JSON schema over refine", () => {
         const schema = zt.duration().check(z.refine(() => true));
         const jsonSchema = toJSONSchema(schema, { io: "input" });
-        assert.partialDeepStrictEqual(jsonSchema, {
+        assert.deepStrictEqual(jsonSchema, {
+            $schema: "https://json-schema.org/draft/2020-12/schema",
             type: "string",
             format: "duration",
-            example: "PT1H",
+            examples: ["PT1H"],
         });
     });
 });

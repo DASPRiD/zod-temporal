@@ -27,7 +27,7 @@ const createCodecConstructor =
         inputSchema._zod.toJSONSchema = () => ({
             type: "string",
             format: schemaFormat,
-            example: example,
+            examples: [example],
         });
 
         return z.codec(

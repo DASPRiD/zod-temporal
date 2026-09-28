@@ -39,10 +39,11 @@ describeMatrix("ZonedDateTime", (zt, z) => {
     it("should create a standard JSON schema", () => {
         const schema = zt.zonedDateTime();
         const jsonSchema = toJSONSchema(schema, { io: "input" });
-        assert.partialDeepStrictEqual(jsonSchema, {
+        assert.deepStrictEqual(jsonSchema, {
+            $schema: "https://json-schema.org/draft/2020-12/schema",
             type: "string",
             format: "zoned-date-time",
-            example: "2020-01-01T14:00:00+01:00[Europe/Berlin]",
+            examples: ["2020-01-01T14:00:00+01:00[Europe/Berlin]"],
         });
     });
 
@@ -66,10 +67,11 @@ describeMatrix("ZonedDateTime", (zt, z) => {
     it("should preserve JSON schema over refine", () => {
         const schema = zt.zonedDateTime().check(z.refine(() => true));
         const jsonSchema = toJSONSchema(schema, { io: "input" });
-        assert.partialDeepStrictEqual(jsonSchema, {
+        assert.deepStrictEqual(jsonSchema, {
+            $schema: "https://json-schema.org/draft/2020-12/schema",
             type: "string",
             format: "zoned-date-time",
-            example: "2020-01-01T14:00:00+01:00[Europe/Berlin]",
+            examples: ["2020-01-01T14:00:00+01:00[Europe/Berlin]"],
         });
     });
 });

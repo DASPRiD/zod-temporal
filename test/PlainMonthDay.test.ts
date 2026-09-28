@@ -31,10 +31,11 @@ describeMatrix("PlainMonthDay", (zt, z) => {
     it("should create a standard JSON schema", () => {
         const schema = zt.plainMonthDay();
         const jsonSchema = toJSONSchema(schema, { io: "input" });
-        assert.partialDeepStrictEqual(jsonSchema, {
+        assert.deepStrictEqual(jsonSchema, {
+            $schema: "https://json-schema.org/draft/2020-12/schema",
             type: "string",
             format: "plain-month-day",
-            example: "12-30",
+            examples: ["12-30"],
         });
     });
 
@@ -53,10 +54,11 @@ describeMatrix("PlainMonthDay", (zt, z) => {
     it("should preserve JSON schema over refine", () => {
         const schema = zt.plainMonthDay().check(z.refine(() => true));
         const jsonSchema = toJSONSchema(schema, { io: "input" });
-        assert.partialDeepStrictEqual(jsonSchema, {
+        assert.deepStrictEqual(jsonSchema, {
+            $schema: "https://json-schema.org/draft/2020-12/schema",
             type: "string",
             format: "plain-month-day",
-            example: "12-30",
+            examples: ["12-30"],
         });
     });
 });

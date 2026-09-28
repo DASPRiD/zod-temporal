@@ -31,10 +31,11 @@ describeMatrix("OffsetDateTime", (zt, z) => {
     it("should create a standard JSON schema", () => {
         const schema = zt.instant();
         const jsonSchema = toJSONSchema(schema, { io: "input" });
-        assert.partialDeepStrictEqual(jsonSchema, {
+        assert.deepStrictEqual(jsonSchema, {
+            $schema: "https://json-schema.org/draft/2020-12/schema",
             type: "string",
             format: "date-time",
-            example: "2020-01-01T14:00:00Z",
+            examples: ["2020-01-01T14:00:00Z"],
         });
     });
 
@@ -47,10 +48,11 @@ describeMatrix("OffsetDateTime", (zt, z) => {
     it("should preserve JSON schema over refine", () => {
         const schema = zt.instant().check(z.refine(() => true));
         const jsonSchema = toJSONSchema(schema, { io: "input" });
-        assert.partialDeepStrictEqual(jsonSchema, {
+        assert.deepStrictEqual(jsonSchema, {
+            $schema: "https://json-schema.org/draft/2020-12/schema",
             type: "string",
             format: "date-time",
-            example: "2020-01-01T14:00:00Z",
+            examples: ["2020-01-01T14:00:00Z"],
         });
     });
 });
